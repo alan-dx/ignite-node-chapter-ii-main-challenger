@@ -7,9 +7,9 @@ import { turnUserAdminController } from "../modules/users/useCases/turnUserAdmin
 
 const usersRoutes = Router();
 
-usersRoutes.post("/", (request, response) =>
-  createUserController.handle(request, response)
-);
+usersRoutes.post("/", (request, response) => {
+  return createUserController.handle(request, response);
+});
 
 usersRoutes.patch("/:user_id/admin", (request, response) =>
   turnUserAdminController.handle(request, response)
